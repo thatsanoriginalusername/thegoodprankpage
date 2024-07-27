@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Black background */
+}
+
+body.login-page {
+    background-color: #000;
+}
+
+body.warning-page {
+    background-color: #900; /* Dark red background */
+}
+
+.login-container, .welcome-container {
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #900; /* Dark red border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red shadow */
+    background-color: #111; /* Darker background for container */
+    color: #fff; /* White text */
+}
+
+h1 {
+    font-size: 32px;
+    color: #f00; /* Red color for headings */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #900; /* Dark red border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #222; /* Darker background for input */
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #900; /* Dark red background */
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #700; /* Darker red on hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.countdown {
+    font-size: 24px;
+    color: #f00; /* Red countdown */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.warning-text {
+    color: #f00; /* Red text */
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="warning-page">
+    <div class="welcome-container">
+        <h1>YOUR DEVICE HAS BEEN INFECTED :(</h1>
+        <p class="warning-text">
+            Make sure to remove all the files from
+            your computer, else they will be deleted.
+            We will not be responsible for any damage
+            made to your device after this reset.
+            Thank you for listening carefully.
+        </p>
+        <p class="warning-text">
+            Assurez-vous de supprimer tous les fichiers de votre ordinateur,
+            sinon ils seront supprimés. Nous ne serons pas responsables des
+            dommages causés à votre appareil après cette réinitialisation.
+            Merci de votre attention.
+        </p>
+        <p class="warning-text">
+            Asegúrese de eliminar todos los archivos de su computadora,
+            de lo contrario, serán eliminados. No seremos responsables
+            de ningún daño causado a su dispositivo después de este reinicio.
+            Gracias por su atención.
+        </p>
+        <p class="warning-text">
+            Stellen Sie sicher, dass Sie alle Dateien von Ihrem Computer entfernen,
+            andernfalls werden sie gelöscht. Wir übernehmen keine Verantwortung für
+            Schäden, die nach diesem Reset an Ihrem Gerät entstehen. Vielen Dank für
+            Ihre Aufmerksamkeit.
+        </p>
+        <p class="warning-text">
+            确保从您的计算机中删除所有文件，否则它们将被删除。在此重置后，我们对设备造成的任何损害不承担任何责任。
+            感谢您的注意。
+        </p>
+        <p>Your computer will totally reset in <span id="countdown" class="countdown">10:00</span></p>
+        <audio id="warningAudio1" src="warning1.mp3" autoplay></audio>
+        <audio id="warningAudio2" src="warning2.mp3" autoplay></audio>
+    </div>
+    <script>
+        function startCountdown(duration) {
+            let timer = duration, minutes, seconds;
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                minutes = Math.floor(timer / 60);
+                seconds = timer % 60;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                countdownElement.textContent = `${minutes}:${seconds}`;
+                if (--timer < 0) {
+                    clearInterval(intervalId);
+                    countdownElement.textContent = "Time's up!";
+                }
+            }
+
+            updateCountdown();
+            const intervalId = setInterval(updateCountdown, 1000);
+        }
+
+        window.onload = function() {
+            startCountdown(600);
+            const warningAudio1 = document.getElementById('warningAudio1');
+            const warningAudio2 = document.getElementById('warningAudio2');
+
+            warningAudio1.play();
+
+            // Play the second audio after the first one ends
+            warningAudio1.onended = function() {
+                warningAudio2.play();
+            };
+
+            // Or play the second audio at a specific time (e.g., after 5 seconds)
+            // setTimeout(function() {
+            //     warningAudio2.play();
+            // }, 5000);
+        };
+    </script>
+</body>
+</html>
